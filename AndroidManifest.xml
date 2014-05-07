@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.pregnappcy.app"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="19" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/NoActionBar" >
+        <activity
+            android:name="com.pregnappcy.app.MainActivity"
+            android:label="@string/app_name"
+        >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.pregnappcy.app.RegistroActivity"
+            android:icon="@drawable/action_bar_icon"
+            android:label="@string/title_activity_registro" >
+        </activity>
+        <activity
+            android:name="com.pregnappcy.app.RegistoPadreMadreActivity"
+            android:label="@string/title_activity_registo_padre_madre" >
+        </activity>
+        <activity
+            android:name="com.pregnappcy.app.SeguirEmbarazos"
+            android:label="@string/title_activity_seguir_embarazos" >
+        </activity>
+        <activity
+            android:name="com.pregnappcy.app.MostrarEmbarazos"
+                        android:label="@string/title_activity_mostrar_lista_embarazos"
+           >
+        </activity>
+        <activity
+            android:name="com.pregnappcy.app.MenuActivity"
+            android:label="@string/title_activity_menu" >
+        </activity>
+    </application>
+
+</manifest>

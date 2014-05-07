@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pregnappcy</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="login_email_hint">e-mail</string>
+    <string name="login_password_hint">contraseña</string>
+    <string name="btnEntrar">Ok</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="registrate"> ¿No tienes cuenta?</string>
+    <string name="registro"> ¡Regístrate!</string>
+    <string name="title_activity_registro">¡Regístrate!</string>
+    <string name="siguiente"> Siguiente</string>
+    <string name="seleccion_tipo_usuario"> Selecciona tipo de usuario</string>
+    <string name="tipo_usuario"> Usuario </string>
+    <string name="title_activity_registo_padre_madre">RegistoPadreMadreActivity</string>
+    <string name="btnRegistroPadreMadre"> Finalizar</string>
+    <string name="fur">Introducir FUR</string>
+    <string name="title_activity_seguir_embarazos">SeguirEmbarazos</string>
+    <string name="Introduce_email_pa_ma"> Introduce el email del padre o la madre.</string>
+    <string name="ButtonEnviar"> Enviar</string>
+    <string name="title_activity_mostrar_lista_embarazos">Embarazos que sigues</string>
+    <string name="RegistrarEmbarazo">Registrar tu embarazo</string>
+    <string name="img_descrp">Descripción imágen.</string>
+    <string name="title_activity_menu">MenuActivity</string>
+
+</resources>
