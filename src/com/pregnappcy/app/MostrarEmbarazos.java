@@ -5,6 +5,8 @@ import java.util.List;
 
 import adapters.EmbarazoAdapter;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -69,4 +71,17 @@ public class MostrarEmbarazos extends Activity {
 		});
 	}
 
+	@Override
+	public void onBackPressed() {
+		new AlertDialog.Builder(this).setTitle("ÀSalir de la aplicaci—n?")
+				.setMessage("ÀSeguro que quieres salir?")
+				
+				.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						MostrarEmbarazos.super.onBackPressed();
+						
+					}
+				}).setNegativeButton(android.R.string.no, null).show();
+	}
 }

@@ -1,6 +1,8 @@
 package com.pregnappcy.app;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -25,6 +27,7 @@ public class MainActivity extends Activity {
 	private EditText password;
 	private User myUser;
 	private DataBaseConnector dbc;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -32,7 +35,7 @@ public class MainActivity extends Activity {
 		dbc = new DataBaseConnector(this);
 		dbc.open();
 		controller = Controller.the();
-		//scontroller.prueba();
+		// scontroller.prueba();
 		myUser = controller.checkIfUserLogged();
 		// Comprobamos si hay usuario ya en local
 		if (myUser != null) {
@@ -113,7 +116,6 @@ public class MainActivity extends Activity {
 
 	@Override
 	public void onResume() {
-		//dbc.open??
 		super.onResume();
 	}
 
@@ -132,28 +134,39 @@ public class MainActivity extends Activity {
 	 * lista con los embarazos que sigue.
 	 */
 	private void cargarInterfaz() {
-		
-		/*XL.e("Que tenemos en la BDA", controller.getEmbarazos().get(2).getNombre_padre());
-		XL.e("Usuario sigue", String.valueOf(myUser.getEmbarazos().size()));*/
-		
+
+		/*
+		 * XL.e("Que tenemos en la BDA",
+		 * controller.getEmbarazos().get(2).getNombre_padre());
+		 * XL.e("Usuario sigue", String.valueOf(myUser.getEmbarazos().size()));
+		 */
+
 		for (int i = 0; i < myUser.getEmbarazos().size(); i++)
 			XL.e("Embarazo [" + String.valueOf(i) + "]: ",
-					String.valueOf(myUser.getEmbarazos().get(i).getNombre_padre()));
-		
+					String.valueOf(myUser.getEmbarazos().get(i)
+							.getNombre_padre()));
+
 		if (myUser.getEmbarazos().size() == 0) {
 			// Cargar interfaz para seguir embarazos
 			Intent i = new Intent(getApplicationContext(),
 					SeguirEmbarazos.class);
 			startActivity(i);
 			dbc.close();
-	
+			finish();
+
 		} else {
 			// Cargar interfaz de los embarazos que sigue (La lista)
 			Intent i = new Intent(getApplicationContext(),
 					MostrarEmbarazos.class);
 			startActivity(i);
 			dbc.close();
+			finish();
 		}
 	}
 
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+	}
+	
 }
