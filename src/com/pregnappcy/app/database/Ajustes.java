@@ -67,8 +67,6 @@ public class Ajustes {
 	private void setAtributes(Cursor cursor) {
 
 		if (cursor != null) {
-			/*this.id = cursor.getLong(cursor
-					.getColumnIndex(DataBaseConnector.KEY_ID));*/
 			this.id_usuario = cursor.getLong(cursor
 					.getColumnIndex(DataBaseConnector.KEY_ID_USUARIO));
 			this.email = cursor.getString(cursor
